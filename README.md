@@ -122,7 +122,6 @@ The runner checks all history chains, block validity, encrypted final snapshots 
 
 `validation/RESULTS.md`, `validation/summary.json` and `validation/timings.csv` contain a measured 20-run example from the development host. Rerun on your own computer to obtain your measurements. Timing comparisons use all observed samples, and failing a performance target is reported rather than hidden; functional failure exits with an error status.
 
-### How this relates to Chapter 6
 
 These are synthetic workflow reproductions, not historical case evidence. Scenario observations now come from the same export parser as the interactive application. UFED is not executed. The data-breach ZIP contains small network/access-log fixtures, not PCAP data or 50000 customer records. Tor attribution is not implemented. Simple SQL-like request markers are flagged as review leads, not proof of an attack.
 
