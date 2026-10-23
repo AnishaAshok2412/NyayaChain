@@ -65,6 +65,7 @@ import os
 import sys
 import uuid
 import zipfile
+from evidence_analysis import analyze_evidence, format_analysis
 from base64 import b64decode, b64encode
 from datetime import datetime, timezone
 from enum import Enum
@@ -923,6 +924,10 @@ class MetadataBlockchain:
                            tool_used: str = 'N/A') -> ActionEntry:
         _require_permission(actor, ActionType.RESPOND_TO_FINDING)
         lr = self._get_lab_request(request_id)
+        if lr.status not in (RequestStatus.ACKNOWLEDGED, RequestStatus.IN_PROGRESS):
+            raise ValueError('Acknowledge the lab request before responding.')
+        if lr.assigned_to is None or lr.assigned_to.user_id != actor.user_id:
+            raise PermissionError('Only the assigned examiner can respond to this request.')
         ft = lr.get_finding(finding_id)
         if ft is None:
             raise KeyError(f"Finding '{finding_id}' not in request '{request_id}'.")
@@ -993,6 +998,34 @@ class MetadataBlockchain:
         print(f"  [LEDGER] Analysis logged → {evidence_id} by {actor.name}")
         return entry
 
+    def preview_evidence_analysis(self, actor: User, evidence_id: str,
+                                  profile: str, local_copy: str = None) -> dict:
+        """Analyze registered bytes without changing evidence or closing findings."""
+        _require_permission(actor, ActionType.LOG_ANALYSIS)
+        record = self._get_record(evidence_id)
+        if record.committed_to_chain:
+            raise ValueError('Evidence is already finalized; register a new examination record.')
+        return analyze_evidence(record.offchain_meta, profile, local_copy)
+
+    def procedure_status(self, evidence_id: str) -> dict:
+        """Describe actual recorded workflow; this is not a legal-compliance score."""
+        record = self._get_record(evidence_id)
+        requests = [self.lab_requests[rid] for rid in record.lab_request_ids]
+        return {
+            'evidence_registered': bool(record.history),
+            'analysis_recorded': any(e.action_type == ActionType.LOG_ANALYSIS for e in record.history),
+            'linked_requests_closed': all(r.status == RequestStatus.COMPLETED for r in requests),
+            'linked_request_count': len(requests),
+            'unresolved_findings': [f.finding_id for r in requests for f in r.findings
+                                    if f.status in (FindingStatus.PENDING, FindingStatus.IN_PROGRESS)],
+            'unable_to_determine_findings': [f.finding_id for r in requests for f in r.findings
+                                             if f.status == FindingStatus.UNABLE_TO_DETERMINE],
+            'bns_tags_present': bool(record.legal_sections['bns']),
+            'snapshot_submitted': record.committed_to_chain,
+            'final_snapshot_mined': any(r.get('evidence_id') == evidence_id and r.get('final_commit')
+                                         for b in self.chain for r in b['records']),
+        }
+
     # ── Phase-3: Legal Mapping & Blockchain Commit ────────────────────────────
 
     def map_legal_sections(self, actor: User, evidence_id: str,
@@ -1027,6 +1060,14 @@ class MetadataBlockchain:
         record = self._get_record(evidence_id)
         if record.committed_to_chain:
             raise ValueError(f"Evidence {evidence_id} already committed.")
+
+        checks = self.procedure_status(evidence_id)
+        if not checks['analysis_recorded']:
+            raise ValueError('Record a laboratory analysis before final submission.')
+        if not checks['linked_requests_closed']:
+            raise ValueError('Complete all linked laboratory finding targets before final submission.')
+        if not checks['bns_tags_present']:
+            raise ValueError('Add at least one illustrative BNS tag before final submission.')
 
         cert_id = f'BSA-CERT-{str(uuid.uuid4())[:10].upper()}'
         record.bsa_certificate_id = cert_id
@@ -1192,6 +1233,8 @@ class ReportGenerator:
 
         valid = self._verify_history_chain(rec)
         lines += [
+            ' RECORDED PROCEDURE STATUS (NOT A LEGAL ASSESSMENT)',
+            json.dumps(self.bc.procedure_status(evidence_id), indent=2),
             ' INTEGRITY VERIFICATION',
             '─' * W,
             f" History chain intact : {'✓ VERIFIED' if valid else '✗ TAMPERING DETECTED'}",
@@ -1332,6 +1375,7 @@ class ReportGenerator:
             },
             'evidence':            rec.to_dict(),
             'linked_lab_requests': linked,
+            'procedure_status': self.bc.procedure_status(evidence_id),
             'integrity': {
                 'history_chain_valid': self._verify_history_chain(rec),
                 'block_chain_valid':   self.bc.verify_chain(),
@@ -1885,6 +1929,7 @@ def menu_lab(user: User, bc: MetadataBlockchain, reporter: ReportGenerator):
         '7': 'Export evidence text report',
         '8': 'Export evidence JSON report',
         '9': 'Export lab request findings brief',
+        'A': 'Analyze registered evidence data (supported exports)',
         '0': 'Logout',
     }
     while True:
@@ -1894,7 +1939,7 @@ def menu_lab(user: User, bc: MetadataBlockchain, reporter: ReportGenerator):
         for k, v in OPTS.items():
             print(f"  {cc(YLW, k)}.  {v}")
         rule()
-        ch = ask('Select')
+        ch = ask('Select').upper()
 
         if ch == '1':
             list_evidence(bc)
@@ -1949,6 +1994,18 @@ def menu_lab(user: User, bc: MetadataBlockchain, reporter: ReportGenerator):
             lr = pick_lab_request(bc)
             if lr: print(reporter.lab_request_report(user, lr.request_id))
 
+        elif ch == 'A':
+            eid = pick_evidence(bc)
+            if eid:
+                result = _preview_analysis_ui(user, bc, eid)
+                if result and ask('Record these observations in evidence history? (y/n)').lower() == 'y':
+                    try:
+                        bc.log_analysis(user, eid, 'Data-derived ' + result['profile'],
+                                        format_analysis(result), result['engine'])
+                        ok('Observations recorded. Unsupported items remain marked for manual examination.')
+                    except Exception as e:
+                        err(str(e))
+
         elif ch == '0':
             break
         else:
@@ -1987,6 +2044,18 @@ def _lab_view_inbox(user: User, bc: MetadataBlockchain):
                 err(str(e))
 
 
+def _preview_analysis_ui(user: User, bc: MetadataBlockchain, evidence_id: str):
+    print('  Profiles: email, authentication, identity, network, inventory')
+    profile = ask('Profile relevant to your evidence / finding').lower()
+    local_copy = ask('Optional local evidence copy (blank uses registered location)') or None
+    try:
+        result = bc.preview_evidence_analysis(user, evidence_id, profile, local_copy)
+        print(format_analysis(result))
+        return result
+    except Exception as e:
+        err(str(e)); return None
+
+
 def _lab_respond_to_finding(user: User, bc: MetadataBlockchain):
     inbox  = bc.get_lab_inbox(user)
     active = [lr for lr in inbox
@@ -2017,9 +2086,24 @@ def _lab_respond_to_finding(user: User, bc: MetadataBlockchain):
         err('Invalid or already-closed Finding ID.'); return
 
     print(cc(BLD, f'\n  Responding to {fid}: {ft.target_description}'))
-    atype    = ask('Analysis type performed')
-    response = ask('Findings / response to the police brief')
-    tool     = ask('Tool / instrument used')
+    mode = ask('Analysis mode: 1=derive observations from evidence, 2=manual examiner findings')
+    if mode == '1':
+        result = _preview_analysis_ui(user, bc, ft.evidence_id)
+        if result is None:
+            return
+        if result['status'] == 'MANUAL_EXAMINATION_REQUIRED':
+            warn('No applicable observations could be extracted. This target cannot be automatically resolved.')
+            return
+        atype = 'Data-derived ' + result['profile']
+        response = format_analysis(result)
+        tool = result['engine']
+        warn('Review whether these observations answer this specific target before selecting an outcome.')
+    elif mode == '2':
+        atype    = ask('Analysis type performed')
+        response = ask('Findings / response to the police brief')
+        tool     = ask('Tool / instrument used')
+    else:
+        err('Invalid analysis mode.'); return
     print('  Outcome: 1=RESOLVED  2=IN_PROGRESS  3=UNABLE_TO_DETERMINE')
     omap = {'1': FindingStatus.RESOLVED,
             '2': FindingStatus.IN_PROGRESS,
@@ -2040,7 +2124,7 @@ def _lab_respond_to_finding(user: User, bc: MetadataBlockchain):
         )
         ok(f'Response recorded for {fid}. Request status: {lr.status.value}')
         if lr.status == RequestStatus.COMPLETED:
-            ok(f'All findings resolved — request {lr.request_id} COMPLETED.')
+            ok(f'All findings closed — request {lr.request_id} COMPLETED (review individual outcomes).')
     except Exception as e:
         err(str(e))
 

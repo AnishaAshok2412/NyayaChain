@@ -1,0 +1,8 @@
+X-Synthetic: true
+Date: Wed, 01 Jan 2025 10:00:00 +0000
+From: tester@example.invalid
+To: recipient@example.invalid
+Message-ID: <synthetic-example@example.invalid>
+X-Originating-IP: 203.0.113.42
+
+Synthetic demonstration email. No real account information.

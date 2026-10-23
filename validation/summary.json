@@ -43,7 +43,7 @@
   "scenarios": {
     "phishing": {
       "case_id": "CASE-2025-CF001",
-      "evidence_id": "EV-8BE224BF",
+      "evidence_id": "EV-F0D74926",
       "history_actions": [
         "REGISTER",
         "TRANSFER_CUSTODY",
@@ -57,7 +57,7 @@
     },
     "identity_theft": {
       "case_id": "CASE-2025-ID001",
-      "evidence_id": "EV-AF69236E",
+      "evidence_id": "EV-9023C57A",
       "history_actions": [
         "REGISTER",
         "TRANSFER_CUSTODY",
@@ -71,7 +71,7 @@
     },
     "data_breach": {
       "case_id": "CASE-2025-DB001",
-      "evidence_id": "EV-2B1EA7F6",
+      "evidence_id": "EV-85051FDA",
       "history_actions": [
         "REGISTER",
         "LOG_ANALYSIS",
@@ -85,31 +85,31 @@
     {
       "index": 1,
       "snapshots": 0,
-      "hash": "c74bd8a32e43823e24355aeeb6b0841f3d9df711f27bd998ae0fe4c482600d43"
+      "hash": "f15f68aa8ce8ede217db527089aa7ffeb8626541547a1de0bb3a5eea31a2f600"
     },
     {
       "index": 2,
       "snapshots": 1,
-      "hash": "a905ca670fce46b9b278a2005e8d5310919929d26348eb6a6e74b478124a54e2"
+      "hash": "6ea7d82c5c1f6d65816473e3023b63f21580e07c136a59a30be5eb059a88d817"
     },
     {
       "index": 3,
       "snapshots": 1,
-      "hash": "f9c8a88cc8e01a1e5e569586a3582c4186a239f6d06c0a272dcbf51615ce83b7"
+      "hash": "c04fc114a08ae850d450dd7ec863fbc7c1b9675ea83e742ee77b8b549ea1d2fc"
     },
     {
       "index": 4,
       "snapshots": 2,
-      "hash": "e00480573917c695cc77b2bd38d4bbd57704ae1d6779ef107db7417cbb7001c3"
+      "hash": "2c706acc9aa5cd299050f0289b78a61df89037832d7ac8ce41389fb15f9fdfc3"
     },
     {
       "index": 5,
       "snapshots": 2,
-      "hash": "b80b3066f9178d8accf30365ad4e532de2d6a3ee9c875033daa9effcb11ba4e2"
+      "hash": "0da28b626e5192c76940003bad8a7a7e24b08b8548c4bbe684de55cfabb22abf"
     }
   ],
   "notes": [
-    "Synthetic examiner findings; external forensic tools are not executed.",
+    "Observations derived from synthetic export bytes; external forensic tools are not executed.",
     "Legal tags and certificate templates are not validated legal certification.",
     "BSA 65A/65B labels in the dissertation are not reproduced.",
     "Five blocks reflect the documented mining schedule, not scalability evidence."
@@ -126,105 +126,113 @@
     "metrics": {
       "ZIP file hashing (separate from registration)": {
         "samples": 60,
-        "median_seconds": 7.779250017847517e-05,
-        "p95_seconds": 0.00011589499990805052,
-        "max_seconds": 0.00018198499992649886,
+        "median_seconds": 6.929500000296684e-05,
+        "p95_seconds": 0.00011962999997194856,
+        "max_seconds": 0.00014180399966789992,
         "dissertation_target_seconds": null,
         "all_samples_under_target": null
       },
       "Evidence registration": {
         "samples": 60,
-        "median_seconds": 0.000143606000165164,
-        "p95_seconds": 0.00031397400016430765,
-        "max_seconds": 0.0028140750000602566,
+        "median_seconds": 0.00015576999976474326,
+        "p95_seconds": 0.0003215850001652143,
+        "max_seconds": 0.0028100090003135847,
         "dissertation_target_seconds": 0.1,
         "all_samples_under_target": true
       },
       "Proof-of-work mining (separate)": {
         "samples": 80,
-        "median_seconds": 0.02846364950005409,
-        "p95_seconds": 0.11521808199995576,
-        "max_seconds": 0.19048250800005917,
+        "median_seconds": 0.034431134999977075,
+        "p95_seconds": 0.14039045099980285,
+        "max_seconds": 0.24575418399990667,
         "dissertation_target_seconds": null,
         "all_samples_under_target": null
       },
       "Custody transfer logging": {
         "samples": 80,
-        "median_seconds": 1.821749992814148e-05,
-        "p95_seconds": 6.584999982806039e-05,
-        "max_seconds": 0.00012883399995189393,
+        "median_seconds": 1.9809499917755602e-05,
+        "p95_seconds": 6.545900032506324e-05,
+        "max_seconds": 0.00011857900017275824,
         "dissertation_target_seconds": 0.1,
         "all_samples_under_target": true
       },
       "Lab request issuance": {
         "samples": 20,
-        "median_seconds": 7.46324999454373e-05,
-        "p95_seconds": 8.846399987305631e-05,
-        "max_seconds": 9.301099998992868e-05,
+        "median_seconds": 7.697149999330577e-05,
+        "p95_seconds": 0.00012037199985570624,
+        "max_seconds": 0.00013907999982620822,
         "dissertation_target_seconds": 0.1,
         "all_samples_under_target": true
       },
+      "Evidence parsing (separate)": {
+        "samples": 100,
+        "median_seconds": 0.0003198770002654783,
+        "p95_seconds": 0.0009466689998589572,
+        "max_seconds": 0.0030240520000006654,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      },
       "Finding response logging": {
         "samples": 40,
-        "median_seconds": 3.340550006214471e-05,
-        "p95_seconds": 5.5342999985441566e-05,
-        "max_seconds": 0.00010938500008705887,
+        "median_seconds": 6.407699993360438e-05,
+        "p95_seconds": 0.00011642600020422833,
+        "max_seconds": 0.0001878729999589268,
         "dissertation_target_seconds": null,
         "all_samples_under_target": null
       },
       "Legal mapping": {
         "samples": 60,
-        "median_seconds": 1.5539000060016406e-05,
-        "p95_seconds": 6.679100033579743e-05,
-        "max_seconds": 0.0002201369998147129,
+        "median_seconds": 1.7651999996814993e-05,
+        "p95_seconds": 2.281400020365254e-05,
+        "max_seconds": 3.5383999602345284e-05,
         "dissertation_target_seconds": null,
         "all_samples_under_target": null
       },
       "Final snapshot submission": {
         "samples": 60,
-        "median_seconds": 0.00013218999993114267,
-        "p95_seconds": 0.00023920000012367382,
-        "max_seconds": 0.00045705899992753984,
+        "median_seconds": 0.00016017150005609437,
+        "p95_seconds": 0.00028836499996032217,
+        "max_seconds": 0.00032677299986971775,
         "dissertation_target_seconds": null,
         "all_samples_under_target": null
       },
       "Analysis action logging": {
         "samples": 80,
-        "median_seconds": 1.4406999753191485e-05,
-        "p95_seconds": 2.8602999918803107e-05,
-        "max_seconds": 7.673600021007587e-05,
+        "median_seconds": 3.0345500135808834e-05,
+        "p95_seconds": 4.090199990969268e-05,
+        "max_seconds": 7.006600026215892e-05,
         "dissertation_target_seconds": 0.1,
         "all_samples_under_target": true
       },
       "History report generation (8+ actions)": {
         "samples": 40,
-        "median_seconds": 0.0004513110000061715,
-        "p95_seconds": 0.0007092599998941296,
-        "max_seconds": 0.0007485999999516935,
+        "median_seconds": 0.0005079760001081013,
+        "p95_seconds": 0.0007702919997427671,
+        "max_seconds": 0.0020668380002462072,
         "dissertation_target_seconds": 0.5,
         "all_samples_under_target": true
       },
       "Demonstration certificate generation": {
         "samples": 60,
-        "median_seconds": 0.0002816955000071175,
-        "p95_seconds": 0.00041148099990095943,
-        "max_seconds": 0.0005711019998670963,
+        "median_seconds": 0.00032257649991151993,
+        "p95_seconds": 0.0004175399999439833,
+        "max_seconds": 0.0006398949999493198,
         "dissertation_target_seconds": 0.2,
         "all_samples_under_target": true
       },
       "JSON report generation": {
         "samples": 60,
-        "median_seconds": 0.00045468599978448765,
-        "p95_seconds": 0.000695118999828992,
-        "max_seconds": 0.0009073289998013934,
+        "median_seconds": 0.00046579800005019933,
+        "p95_seconds": 0.0008386449999306933,
+        "max_seconds": 0.0010397780001767387,
         "dissertation_target_seconds": 0.3,
         "all_samples_under_target": true
       },
       "History report generation (<8 actions)": {
         "samples": 20,
-        "median_seconds": 0.00026994700010618544,
-        "p95_seconds": 0.0004608949998328171,
-        "max_seconds": 0.0005454319998534629,
+        "median_seconds": 0.0003394569998818042,
+        "p95_seconds": 0.00042230700000800425,
+        "max_seconds": 0.0004256019997228577,
         "dissertation_target_seconds": null,
         "all_samples_under_target": null
       }

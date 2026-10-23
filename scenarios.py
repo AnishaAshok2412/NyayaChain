@@ -31,7 +31,7 @@ LIMITS = {
 
 FIXTURES = {
     'phishing': {
-        'email_headers.txt': 'SYNTHETIC EXAMPLE\nDate: Wed, 01 Jan 2025 10:00:00 +0000\nFrom: demo@example.invalid\nX-Originating-IP: 192.0.2.10\n',
+        'email_headers.txt': 'X-Synthetic: true\nDate: Wed, 01 Jan 2025 10:00:00 +0000\nFrom: demo@example.invalid\nX-Originating-IP: 192.0.2.10\n',
         'server_access.csv': 'timestamp,user,source_ip,result\n2025-01-01T10:01:00Z,demo,192.0.2.10,FAILED\n2025-01-01T10:02:00Z,demo,192.0.2.10,SUCCESS\n',
     },
     'identity_theft': {
@@ -114,14 +114,13 @@ def run_scenarios(fixture_dir):
                           {'evidence_id': s1, 'description': 'Review server access events', 'priority': 'HIGH'},
                       ])
     bc.acknowledge_lab_request(l1, request.request_id)
-    responses = [
-        'Synthetic header: timestamp 2025-01-01 10:00 UTC; originating IP 192.0.2.10. Header values do not prove sender identity.',
-        'Synthetic server log contains one failed and one successful login. Authorization cannot be inferred from these entries alone.',
-    ]
-    for finding, response in zip(request.findings, responses):
+    for finding, profile in zip(request.findings, ('email', 'authentication')):
+        result = measure('Evidence parsing (separate)', bc.preview_evidence_analysis, l1, s1, profile)
+        if result['status'] != 'OBSERVATIONS_AVAILABLE':
+            raise RuntimeError('Synthetic scenario fixture did not produce observations')
         measure('Finding response logging', bc.respond_to_finding, l1, request.request_id,
-                finding.finding_id, response, n.FindingStatus.RESOLVED,
-                'Synthetic fixture review', 'Illustrative examiner entry; no external tool executed')
+                finding.finding_id, json.dumps(result), n.FindingStatus.RESOLVED,
+                'Data-derived ' + profile, result['engine'])
     seal(p2, s1, ['Sec. 318(4)', 'Sec. 336(1)'], ['Sec. 63', 'Sec. 61'])
     mine()
 
@@ -130,25 +129,20 @@ def run_scenarios(fixture_dir):
                   'Cheating by Personation (Sec. 319)')
     transfer(p2, s2, p1)
     transfer(p1, s2, l1)
-    analysis(l1, s2, 'IMSI metadata examination',
-             'Synthetic fixture records SIM-DEMO-001 and SYNTHETIC-IMSI-001.',
-             'UFED Touch Ultimate — dissertation reference only; not executed')
+    identity_result = measure('Evidence parsing (separate)', bc.preview_evidence_analysis, l1, s2, 'identity')
+    analysis(l1, s2, 'IMSI metadata examination', json.dumps(identity_result), identity_result['engine'])
     transfer(l1, s2, l2)
-    analysis(l2, s2, 'Call log correlation',
-             'Two synthetic call events reference the same device and peer.',
-             'Illustrative examiner entry; no external tool executed')
+    call_result = measure('Evidence parsing (separate)', bc.preview_evidence_analysis, l2, s2, 'identity')
+    analysis(l2, s2, 'Call log correlation', json.dumps(call_result), call_result['engine'])
     seal(p1, s2, ['Sec. 319(1)', 'Sec. 318(4)'], ['Sec. 63', 'Sec. 61'])
     mine()
 
     # Scenario 3: metadata fixture, not a PCAP parser or attack detector.
     s3 = register('data_breach', p1, 'CASE-2025-DB001', 'network_trace',
                   'Data Breach / Unauthorised Access')
-    analysis(l2, s3, 'Network traffic metadata review',
-             'Synthetic metadata lists 4096 bytes to 198.51.100.30. Tor attribution/exfiltration is not established.',
-             'Illustrative network metadata; no packet analysis tool executed')
-    analysis(l2, s3, 'Web server access review',
-             'Synthetic request contains a labelled SQL injection marker; this is not automated vulnerability detection.',
-             'Illustrative examiner entry; no external tool executed')
+    network_result = measure('Evidence parsing (separate)', bc.preview_evidence_analysis, l2, s3, 'network')
+    analysis(l2, s3, 'Network traffic metadata review', json.dumps(network_result), network_result['engine'])
+    analysis(l2, s3, 'Web server access review', json.dumps(network_result), network_result['engine'])
     seal(p1, s3, ['Sec. 111(1)'], ['Sec. 63', 'Sec. 61'])
     mine()
 
@@ -228,7 +222,7 @@ def run_scenarios(fixture_dir):
                                     'history_actions': [a.action_type.value for a in bc.world_state[eid].history]}
                              for name, eid in ids.items()},
                'blocks': [{'index': b['index'], 'snapshots': len(b['records']), 'hash': bc.hash(b)} for b in bc.chain],
-               'notes': ['Synthetic examiner findings; external forensic tools are not executed.',
+               'notes': ['Observations derived from synthetic export bytes; external forensic tools are not executed.',
                          'Legal tags and certificate templates are not validated legal certification.',
                          'BSA 65A/65B labels in the dissertation are not reproduced.',
                          'Five blocks reflect the documented mining schedule, not scalability evidence.']}
@@ -292,7 +286,7 @@ def benchmark(runs, output):
               'A passing timing comparison applies only to this host and these tiny synthetic fixtures. It is not a Fabric, production, evidence-acquisition or scalability benchmark.', '',
               'Five-block schedule: genesis; phishing registration; phishing final snapshot; identity registration + final snapshot; breach registration + final snapshot.', '',
               'Identity history has exactly eight actions because the runner does not invoke the history-view operation.', '',
-              'The demonstration records supplied examiner findings. It does not run UFED, identify Tor nodes, detect SQL injection, or contain 50000 customer records.', '',
+              'The demonstration parses synthetic exports. It does not run UFED, attribute Tor nodes, prove SQL injection exploitation, or contain 50000 customer records.', '',
               'Legal tags remain illustrative. The dissertation\'s BSA 65A/65B labels are not copied into these scenarios. Certificates are demonstration templates.']
     (output / 'RESULTS.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
     print(f"{'PASS' if all(run_checks) else 'FAIL'}: {runs} runs; 3 scenarios; 5 blocks; 4 access rejections.")

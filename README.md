@@ -38,6 +38,18 @@ Start the interactive application:
 python nyayachain_dissertation.py
 ```
 
+## Analyze your own evidence
+
+The normal application now derives observations from supported evidence exports. See [TESTING.md](TESTING.md) for the complete workflow and required input fields.
+
+- Lab menu **3**: select a finding, choose mode **1**, then an analysis profile; review the computed observations before recording the outcome.
+- Lab menu **A**: analyze registered evidence without a request and optionally record the observations.
+- Profiles: email headers, authentication logs, identity/call metadata, network/web exports and file inventory.
+- Original SHA-256 is checked before analysis. Unsupported formats require manual examination.
+- Final submission requires recorded analysis, closed linked requests and at least one BNS tag. Reports distinguish submission from mining and preserve unable-to-determine outcomes.
+
+Try `examples/tester_inputs/authentication.csv`: it produces two failures and one success. Register a modified copy as new evidence to see the result change.
+
 ## Demo accounts
 
 | Role | User ID | Demo password |
@@ -74,7 +86,7 @@ These are intentionally public demonstration accounts.
 python -m unittest discover -s tests -v
 ```
 
-Tested with Python 3.12. The integration test exercises registration, transfers, request completion, final snapshot mining, all report types, AES decryption, denied court mining, invalid type/section matching, transaction tampering and invalid proof detection. Interactive police login/logout was also verified.
+Tested with Python 3.12. The tests exercise data-dependent parsing, mixed ZIP exports, changed-byte rejection, the terminal finding workflow, registration, transfers, request completion, final snapshot mining, all report types, AES decryption, denied court mining, invalid type/section matching, transaction tampering and invalid proof detection. Interactive police login/logout was also verified.
 
 ## Scope and limitations
 
@@ -82,7 +94,7 @@ This is a single-process Python blockchain simulation, not a deployed Hyperledge
 
 The ledger disappears when the process ends. Registration and final-commit snapshots are queued for mining; intermediate actions live in mutable in-memory histories and appear in later snapshots. Final-commit status means snapshot submission; mining is separate. Viewing history appends a view event. There is no trusted external checkpoint preventing someone controlling the process from rebuilding its chain.
 
-Public demo passwords, a hard-coded demo AES key, unauthenticated CBC encryption and optional plaintext fallback are retained from the supplied prototype. Role checks are illustrative; custody ownership, case isolation and workflow sequencing are not comprehensively enforced. URL hashing does not preserve a downloaded copy. Directory ingestion can reuse an existing sibling ZIP; create a fresh ZIP to demonstrate changed evidence.
+Public demo passwords, a hard-coded demo AES key, unauthenticated CBC encryption and optional plaintext fallback are retained from the supplied prototype. Role checks are illustrative. Request acknowledgement, assigned-examiner responses and basic final-submission prerequisites are checked; custody ownership and comprehensive case isolation are not enforced. URL hashing does not preserve a downloaded copy. Directory ingestion can reuse an existing sibling ZIP; create a fresh ZIP to demonstrate changed evidence.
 
 Legal catalogues, punishment descriptions and evidence-type mappings came from the supplied dissertation source and have not been legally verified. They are demonstration configuration, not statutory restrictions on evidence types. Generated reports and certificate IDs do not establish legal compliance or admissibility; the certificate is not an official statutory form. Use synthetic data for this portfolio demonstration.
 
@@ -112,7 +124,7 @@ The runner checks all history chains, block validity, encrypted final snapshots 
 
 ### How this relates to Chapter 6
 
-These are synthetic workflow reproductions, not historical case evidence. Examiner conclusions are illustrative entries. UFED is named only as a dissertation reference; it is not executed. The data-breach ZIP contains small network/access-log fixtures, not PCAP data or 50000 customer records. Tor attribution and SQL injection detection are not implemented.
+These are synthetic workflow reproductions, not historical case evidence. Scenario observations now come from the same export parser as the interactive application. UFED is not executed. The data-breach ZIP contains small network/access-log fixtures, not PCAP data or 50000 customer records. Tor attribution is not implemented. Simple SQL-like request markers are flagged as review leads, not proof of an attack.
 
 Legal values are illustrative tags. The runner does not repeat the dissertation's BSA 65A/65B labels. Demonstration certificate output remains explicitly labelled as a template requiring legal review.
 

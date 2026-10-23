@@ -1,0 +1,4 @@
+timestamp,username,source_ip,result
+2025-01-01T10:00:00Z,tester,203.0.113.42,FAILED
+2025-01-01T10:01:00Z,tester,203.0.113.42,FAILED
+2025-01-01T10:02:00Z,tester,203.0.113.42,SUCCESS

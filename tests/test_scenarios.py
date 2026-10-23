@@ -26,6 +26,9 @@ class DissertationScenarios(unittest.TestCase):
             phishing = json.loads((Path(directory) / 'phishing/evidence.json').read_text())
             request = next(iter(phishing['linked_lab_requests'].values()))
             self.assertEqual([f['status'] for f in request['findings']], ['RESOLVED', 'RESOLVED'])
+            derived = [json.loads(f['lab_response']) for f in request['findings']]
+            self.assertEqual(derived[0]['observations'][0]['kind'], 'email_headers')
+            self.assertEqual(derived[1]['observations'][0]['failures'], 1)
             self.assertTrue((Path(directory) / 'timings.csv').is_file())
             self.assertTrue((Path(directory) / 'RESULTS.md').is_file())
             for metric in summary['benchmark']['metrics'].values():

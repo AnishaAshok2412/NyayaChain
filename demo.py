@@ -16,9 +16,9 @@ def run_demo(output_dir=None):
     request = bc.issue_lab_request(police, 'DEMO-001', 'Examine synthetic authentication events',
         [{'evidence_id': eid, 'description': 'Identify failed and successful logins', 'priority': 'MEDIUM'}])
     bc.acknowledge_lab_request(lab, request.request_id)
+    result = bc.preview_evidence_analysis(lab, eid, 'authentication')
     bc.respond_to_finding(lab, request.request_id, request.findings[0].finding_id,
-        'One failed login followed by one successful login in the synthetic log.',
-        n.FindingStatus.RESOLVED, 'Log review', 'Manual text inspection')
+        json.dumps(result), n.FindingStatus.RESOLVED, 'Data-derived authentication review', result['engine'])
     bc.transfer_custody(lab, eid, police, 'Examination completed')
     # Illustrative project configuration, not a verified legal assessment.
     bc.map_legal_sections(police, eid, ['Sec. 318(4)'], [], [], [])
