@@ -7,3 +7,4 @@ report_*.json
 demo_output/
 evidence/
 *.zip
+scenario_output*/

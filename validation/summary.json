@@ -1,0 +1,233 @@
+{
+  "checks": {
+    "three_cases_registered": true,
+    "five_blocks": true,
+    "six_snapshots_mined": true,
+    "no_pending_snapshots": true,
+    "two_phishing_findings_resolved": true,
+    "phishing_request_completed": true,
+    "identity_eight_action_sequence": true,
+    "data_breach_two_analysis_entries": true,
+    "all_histories_valid": true,
+    "block_chain_valid": true,
+    "four_access_rejections_without_mutation": true,
+    "history_tamper_detected": true,
+    "block_tamper_detected": true,
+    "encrypted_final_snapshots_match": true,
+    "evidence_file_hashes_match": true
+  },
+  "all_passed": true,
+  "access_checks": [
+    {
+      "check": "Court cannot register evidence",
+      "passed": true
+    },
+    {
+      "check": "Lab cannot register evidence",
+      "passed": true
+    },
+    {
+      "check": "Lab cannot submit final snapshot",
+      "passed": true
+    },
+    {
+      "check": "Court cannot log analysis",
+      "passed": true
+    }
+  ],
+  "history_integrity": {
+    "phishing": true,
+    "identity_theft": true,
+    "data_breach": true
+  },
+  "scenarios": {
+    "phishing": {
+      "case_id": "CASE-2025-CF001",
+      "evidence_id": "EV-8BE224BF",
+      "history_actions": [
+        "REGISTER",
+        "TRANSFER_CUSTODY",
+        "ISSUE_LAB_REQUEST",
+        "ACK_LAB_REQUEST",
+        "LOG_ANALYSIS",
+        "LOG_ANALYSIS",
+        "LEGAL_MAPPING",
+        "BLOCKCHAIN_COMMIT"
+      ]
+    },
+    "identity_theft": {
+      "case_id": "CASE-2025-ID001",
+      "evidence_id": "EV-AF69236E",
+      "history_actions": [
+        "REGISTER",
+        "TRANSFER_CUSTODY",
+        "TRANSFER_CUSTODY",
+        "LOG_ANALYSIS",
+        "TRANSFER_CUSTODY",
+        "LOG_ANALYSIS",
+        "LEGAL_MAPPING",
+        "BLOCKCHAIN_COMMIT"
+      ]
+    },
+    "data_breach": {
+      "case_id": "CASE-2025-DB001",
+      "evidence_id": "EV-2B1EA7F6",
+      "history_actions": [
+        "REGISTER",
+        "LOG_ANALYSIS",
+        "LOG_ANALYSIS",
+        "LEGAL_MAPPING",
+        "BLOCKCHAIN_COMMIT"
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "index": 1,
+      "snapshots": 0,
+      "hash": "c74bd8a32e43823e24355aeeb6b0841f3d9df711f27bd998ae0fe4c482600d43"
+    },
+    {
+      "index": 2,
+      "snapshots": 1,
+      "hash": "a905ca670fce46b9b278a2005e8d5310919929d26348eb6a6e74b478124a54e2"
+    },
+    {
+      "index": 3,
+      "snapshots": 1,
+      "hash": "f9c8a88cc8e01a1e5e569586a3582c4186a239f6d06c0a272dcbf51615ce83b7"
+    },
+    {
+      "index": 4,
+      "snapshots": 2,
+      "hash": "e00480573917c695cc77b2bd38d4bbd57704ae1d6779ef107db7417cbb7001c3"
+    },
+    {
+      "index": 5,
+      "snapshots": 2,
+      "hash": "b80b3066f9178d8accf30365ad4e532de2d6a3ee9c875033daa9effcb11ba4e2"
+    }
+  ],
+  "notes": [
+    "Synthetic examiner findings; external forensic tools are not executed.",
+    "Legal tags and certificate templates are not validated legal certification.",
+    "BSA 65A/65B labels in the dissertation are not reproduced.",
+    "Five blocks reflect the documented mining schedule, not scalability evidence."
+  ],
+  "benchmark": {
+    "runs": 20,
+    "all_runs_passed": true,
+    "environment": {
+      "python": "3.12.14",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+      "processor": "x86_64"
+    },
+    "timing_scope": "Local function calls including application logging; excludes writing exported reports to disk. ZIP hashing and proof-of-work are separate.",
+    "metrics": {
+      "ZIP file hashing (separate from registration)": {
+        "samples": 60,
+        "median_seconds": 7.779250017847517e-05,
+        "p95_seconds": 0.00011589499990805052,
+        "max_seconds": 0.00018198499992649886,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      },
+      "Evidence registration": {
+        "samples": 60,
+        "median_seconds": 0.000143606000165164,
+        "p95_seconds": 0.00031397400016430765,
+        "max_seconds": 0.0028140750000602566,
+        "dissertation_target_seconds": 0.1,
+        "all_samples_under_target": true
+      },
+      "Proof-of-work mining (separate)": {
+        "samples": 80,
+        "median_seconds": 0.02846364950005409,
+        "p95_seconds": 0.11521808199995576,
+        "max_seconds": 0.19048250800005917,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      },
+      "Custody transfer logging": {
+        "samples": 80,
+        "median_seconds": 1.821749992814148e-05,
+        "p95_seconds": 6.584999982806039e-05,
+        "max_seconds": 0.00012883399995189393,
+        "dissertation_target_seconds": 0.1,
+        "all_samples_under_target": true
+      },
+      "Lab request issuance": {
+        "samples": 20,
+        "median_seconds": 7.46324999454373e-05,
+        "p95_seconds": 8.846399987305631e-05,
+        "max_seconds": 9.301099998992868e-05,
+        "dissertation_target_seconds": 0.1,
+        "all_samples_under_target": true
+      },
+      "Finding response logging": {
+        "samples": 40,
+        "median_seconds": 3.340550006214471e-05,
+        "p95_seconds": 5.5342999985441566e-05,
+        "max_seconds": 0.00010938500008705887,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      },
+      "Legal mapping": {
+        "samples": 60,
+        "median_seconds": 1.5539000060016406e-05,
+        "p95_seconds": 6.679100033579743e-05,
+        "max_seconds": 0.0002201369998147129,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      },
+      "Final snapshot submission": {
+        "samples": 60,
+        "median_seconds": 0.00013218999993114267,
+        "p95_seconds": 0.00023920000012367382,
+        "max_seconds": 0.00045705899992753984,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      },
+      "Analysis action logging": {
+        "samples": 80,
+        "median_seconds": 1.4406999753191485e-05,
+        "p95_seconds": 2.8602999918803107e-05,
+        "max_seconds": 7.673600021007587e-05,
+        "dissertation_target_seconds": 0.1,
+        "all_samples_under_target": true
+      },
+      "History report generation (8+ actions)": {
+        "samples": 40,
+        "median_seconds": 0.0004513110000061715,
+        "p95_seconds": 0.0007092599998941296,
+        "max_seconds": 0.0007485999999516935,
+        "dissertation_target_seconds": 0.5,
+        "all_samples_under_target": true
+      },
+      "Demonstration certificate generation": {
+        "samples": 60,
+        "median_seconds": 0.0002816955000071175,
+        "p95_seconds": 0.00041148099990095943,
+        "max_seconds": 0.0005711019998670963,
+        "dissertation_target_seconds": 0.2,
+        "all_samples_under_target": true
+      },
+      "JSON report generation": {
+        "samples": 60,
+        "median_seconds": 0.00045468599978448765,
+        "p95_seconds": 0.000695118999828992,
+        "max_seconds": 0.0009073289998013934,
+        "dissertation_target_seconds": 0.3,
+        "all_samples_under_target": true
+      },
+      "History report generation (<8 actions)": {
+        "samples": 20,
+        "median_seconds": 0.00026994700010618544,
+        "p95_seconds": 0.0004608949998328171,
+        "max_seconds": 0.0005454319998534629,
+        "dissertation_target_seconds": null,
+        "all_samples_under_target": null
+      }
+    }
+  }
+}

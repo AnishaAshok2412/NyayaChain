@@ -88,22 +88,45 @@ Legal catalogues, punishment descriptions and evidence-type mappings came from t
 
 No performance or compliance percentages are claimed without a separate documented evaluation.
 
-## GitHub setup
+## Reproduce the dissertation scenarios
 
-Suggested repository name: `NyayaChain`
-
-Suggested description: Master's final-year project: Python blockchain prototype for metadata-centric digital evidence, chain of custody and forensic lab workflows.
-
-Create an empty GitHub repository, then upload the project contents with README at the repository root. Include the `examples` and `tests` folders. Exclude `.venv`, caches, real evidence and generated reports.
-
-Alternatively, with Git installed, replace `YOUR_USERNAME` below:
+Run all three synthetic scenarios and measure their operations over 20 repetitions:
 
 ```bash
-git init -b main
-git add README.md CHANGELOG.md requirements.txt .gitignore nyayachain_dissertation.py demo.py examples tests
-git commit -m "Add master's final-year NyayaChain project"
-git remote add origin https://github.com/YOUR_USERNAME/NyayaChain.git
-git push -u origin main
+python scenarios.py --runs 20
 ```
 
-Suggested topics: `python`, `digital-forensics`, `blockchain`, `chain-of-custody`, `cybersecurity`, `academic-project`.
+Open `scenario_output/RESULTS.md` for checks and timings. Each case folder contains a custody report, JSON report and demonstration certificate. The phishing folder also includes the lab findings brief. `summary.json`, `timings.csv`, `execution.log` and ZIP fixtures are saved alongside them.
+
+| Scenario | Reproduced workflow | Expected check |
+| --- | --- | --- |
+| Phishing | Police registration, transfer, request, acknowledgement, two finding responses, legal tagging and mining | Two findings RESOLVED; request COMPLETED |
+| Identity theft | Police-to-police-to-lab custody, two examinations with internal lab transfer, tagging and final commit | Exactly eight linked evidence-history actions |
+| Data breach | Network metadata registration, two examiner entries, tagging and mining | Two analysis records |
+
+The mining schedule produces five blocks: genesis, phishing registration, phishing final snapshot, identity registration/final snapshot, and breach registration/final snapshot. It holds six encrypted snapshots. UUIDs, timestamps, hashes, certificate IDs and timing values vary each run.
+
+The runner checks all history chains, block validity, encrypted final snapshots and evidence ZIP fingerprints. It tests the report's four prohibited role operations and confirms they do not mutate state. Separate copied records are modified to verify tamper detection.
+
+`validation/RESULTS.md`, `validation/summary.json` and `validation/timings.csv` contain a measured 20-run example from the development host. Rerun on your own computer to obtain your measurements. Timing comparisons use all observed samples, and failing a performance target is reported rather than hidden; functional failure exits with an error status.
+
+### How this relates to Chapter 6
+
+These are synthetic workflow reproductions, not historical case evidence. Examiner conclusions are illustrative entries. UFED is named only as a dissertation reference; it is not executed. The data-breach ZIP contains small network/access-log fixtures, not PCAP data or 50000 customer records. Tor attribution and SQL injection detection are not implemented.
+
+Legal values are illustrative tags. The runner does not repeat the dissertation's BSA 65A/65B labels. Demonstration certificate output remains explicitly labelled as a template requiring legal review.
+
+Timings cover in-memory function calls, including application logging but excluding writing exported reports to disk. ZIP hashing and proof-of-work mining are measured separately. Sub-millisecond timings for tiny local fixtures do not establish distributed Fabric performance or faster real-world evidence acquisition.
+
+To choose another output folder or run count:
+
+```bash
+python scenarios.py --runs 50 --output scenario_output_50
+```
+
+## Get the code
+
+```bash
+git clone https://github.com/AnishaAshok2412/NyayaChain.git
+cd NyayaChain
+```

@@ -1,0 +1,721 @@
+run,operation,seconds
+1,ZIP file hashing (separate from registration),0.00018198499992649886
+1,Evidence registration,0.0028140750000602566
+1,Proof-of-work mining (separate),0.0288955400001214
+1,Custody transfer logging,6.356600033541326e-05
+1,Lab request issuance,8.323600013682153e-05
+1,Finding response logging,5.5342999985441566e-05
+1,Finding response logging,2.8562999887071783e-05
+1,Legal mapping,1.8478000129107386e-05
+1,Final snapshot submission,0.00029368300010901294
+1,Proof-of-work mining (separate),0.03778114400029153
+1,ZIP file hashing (separate from registration),0.00016333599978679558
+1,Evidence registration,0.00023763799981679767
+1,Custody transfer logging,2.275399992868188e-05
+1,Custody transfer logging,1.3150000086170621e-05
+1,Analysis action logging,1.696599974820856e-05
+1,Custody transfer logging,1.2447999779396923e-05
+1,Analysis action logging,1.1968000308115734e-05
+1,Legal mapping,1.5534000340267085e-05
+1,Final snapshot submission,0.00020317600001362734
+1,Proof-of-work mining (separate),0.029362063000007765
+1,ZIP file hashing (separate from registration),9.711600023365463e-05
+1,Evidence registration,0.00023402300030284096
+1,Analysis action logging,2.2994000119069824e-05
+1,Analysis action logging,1.2107999737054342e-05
+1,Legal mapping,1.3549999948736513e-05
+1,Final snapshot submission,0.0001278029999411956
+1,Proof-of-work mining (separate),0.015890782000042236
+1,History report generation (8+ actions),0.0005259930003376212
+1,Demonstration certificate generation,0.0003052709998883074
+1,JSON report generation,0.0005899799998587696
+1,History report generation (8+ actions),0.0006570420000571175
+1,Demonstration certificate generation,0.00029157000017221435
+1,JSON report generation,0.00045009899986325763
+1,History report generation (<8 actions),0.00026530000013735844
+1,Demonstration certificate generation,0.00022977700018600444
+1,JSON report generation,0.0003257019998272881
+2,ZIP file hashing (separate from registration),3.575400023692055e-05
+2,Evidence registration,0.00011031699978047982
+2,Proof-of-work mining (separate),0.05186221599979035
+2,Custody transfer logging,6.584999982806039e-05
+2,Lab request issuance,8.846399987305631e-05
+2,Finding response logging,3.935999984605587e-05
+2,Finding response logging,2.6440000056027202e-05
+2,Legal mapping,1.7035999917425215e-05
+2,Final snapshot submission,0.00019481399976939429
+2,Proof-of-work mining (separate),0.03819850399986535
+2,ZIP file hashing (separate from registration),0.00010295499987478252
+2,Evidence registration,0.0002107880000039586
+2,Custody transfer logging,2.3305000013351673e-05
+2,Custody transfer logging,1.2909000361105427e-05
+2,Analysis action logging,1.6614999822195387e-05
+2,Custody transfer logging,1.1808000181190437e-05
+2,Analysis action logging,1.1297000128251966e-05
+2,Legal mapping,1.4952999663364608e-05
+2,Final snapshot submission,0.00011858900006700424
+2,Proof-of-work mining (separate),0.01982475600016187
+2,ZIP file hashing (separate from registration),7.83290001891146e-05
+2,Evidence registration,0.0001460800003769691
+2,Analysis action logging,2.171300002373755e-05
+2,Analysis action logging,1.3080000371701317e-05
+2,Legal mapping,1.4683000244986033e-05
+2,Final snapshot submission,9.137799997915863e-05
+2,Proof-of-work mining (separate),0.06049814300013168
+2,History report generation (8+ actions),0.000490159000037238
+2,Demonstration certificate generation,0.0002833870003087213
+2,JSON report generation,0.0006702419996145181
+2,History report generation (8+ actions),0.0003387509996173321
+2,Demonstration certificate generation,0.00029952200020488817
+2,JSON report generation,0.0004017759997623216
+2,History report generation (<8 actions),0.00026264600001013605
+2,Demonstration certificate generation,0.00024636200032546185
+2,JSON report generation,0.00032348800004911027
+3,ZIP file hashing (separate from registration),3.697499960253481e-05
+3,Evidence registration,0.0001497460002610751
+3,Proof-of-work mining (separate),0.01405607400010922
+3,Custody transfer logging,3.350999986651004e-05
+3,Lab request issuance,6.398699997589574e-05
+3,Finding response logging,3.434200016272371e-05
+3,Finding response logging,2.43469999077206e-05
+3,Legal mapping,1.3559999842982506e-05
+3,Final snapshot submission,0.00013694600011149305
+3,Proof-of-work mining (separate),0.016189072000088345
+3,ZIP file hashing (separate from registration),7.69259995649918e-05
+3,Evidence registration,0.00012759199989886838
+3,Custody transfer logging,2.0660999780375278e-05
+3,Custody transfer logging,1.2539000181277515e-05
+3,Analysis action logging,1.4551999811374117e-05
+3,Custody transfer logging,1.1948000064876396e-05
+3,Analysis action logging,1.1106999863841338e-05
+3,Legal mapping,1.394199989590561e-05
+3,Final snapshot submission,0.00013751799997407943
+3,Proof-of-work mining (separate),0.06465160800007652
+3,ZIP file hashing (separate from registration),0.00011727699984476203
+3,Evidence registration,0.00029885099957027705
+3,Analysis action logging,2.8251999992789933e-05
+3,Analysis action logging,1.4261999695008853e-05
+3,Legal mapping,1.6183999832719564e-05
+3,Final snapshot submission,9.949000013875775e-05
+3,Proof-of-work mining (separate),0.019549070999801188
+3,History report generation (8+ actions),0.00045260300021254807
+3,Demonstration certificate generation,0.0004937949997838587
+3,JSON report generation,0.0005576809999183752
+3,History report generation (8+ actions),0.0003618660002757679
+3,Demonstration certificate generation,0.000311248999878444
+3,JSON report generation,0.000561748000109219
+3,History report generation (<8 actions),0.00027314200042383163
+3,Demonstration certificate generation,0.00027062799972554785
+3,JSON report generation,0.0003123909996247676
+4,ZIP file hashing (separate from registration),3.104699999312288e-05
+4,Evidence registration,0.00014800400003878167
+4,Proof-of-work mining (separate),0.1520672269998613
+4,Custody transfer logging,7.742600018900703e-05
+4,Lab request issuance,7.368099977611564e-05
+4,Finding response logging,3.867800023726886e-05
+4,Finding response logging,2.6230000003124587e-05
+4,Legal mapping,1.5934000202832976e-05
+4,Final snapshot submission,0.00019436399998085108
+4,Proof-of-work mining (separate),0.04719180099982623
+4,ZIP file hashing (separate from registration),8.959499973570928e-05
+4,Evidence registration,0.00020952600016244105
+4,Custody transfer logging,2.3825999960536137e-05
+4,Custody transfer logging,1.4290999843069585e-05
+4,Analysis action logging,1.634399995964486e-05
+4,Custody transfer logging,3.072600020459504e-05
+4,Analysis action logging,1.2258999959158245e-05
+4,Legal mapping,1.6124000012496253e-05
+4,Final snapshot submission,0.0001222139999299543
+4,Proof-of-work mining (separate),0.14356705799991687
+4,ZIP file hashing (separate from registration),0.00011589499990805052
+4,Evidence registration,0.00031397400016430765
+4,Analysis action logging,3.0264999622886535e-05
+4,Analysis action logging,1.4872000065224711e-05
+4,Legal mapping,1.62050000653835e-05
+4,Final snapshot submission,0.00010549900025580428
+4,Proof-of-work mining (separate),0.0007736669999758305
+4,History report generation (8+ actions),0.00042309799982831464
+4,Demonstration certificate generation,0.0002808630001709389
+4,JSON report generation,0.0005582520002462843
+4,History report generation (8+ actions),0.0004617959998540755
+4,Demonstration certificate generation,0.00027366299991626875
+4,JSON report generation,0.00040118499964592047
+4,History report generation (<8 actions),0.0002626059999784047
+4,Demonstration certificate generation,0.00023064800006977748
+4,JSON report generation,0.0005062340001131815
+5,ZIP file hashing (separate from registration),3.0855999739287654e-05
+5,Evidence registration,0.00011060699989684508
+5,Proof-of-work mining (separate),0.028031758999986778
+5,Custody transfer logging,4.6610000026703347e-05
+5,Lab request issuance,6.996599995545694e-05
+5,Finding response logging,3.980000019510044e-05
+5,Finding response logging,2.6169999728153925e-05
+5,Legal mapping,1.696599974820856e-05
+5,Final snapshot submission,0.0001681839999037038
+5,Proof-of-work mining (separate),0.018285216000094806
+5,ZIP file hashing (separate from registration),8.898500027498812e-05
+5,Evidence registration,0.00015834900023037335
+5,Custody transfer logging,2.1923000076640164e-05
+5,Custody transfer logging,4.230399963489617e-05
+5,Analysis action logging,1.7236000076081837e-05
+5,Custody transfer logging,1.2379000054352218e-05
+5,Analysis action logging,1.0615999599394854e-05
+5,Legal mapping,1.4280999948823592e-05
+5,Final snapshot submission,0.00013739699988946086
+5,Proof-of-work mining (separate),0.11318845899995722
+5,ZIP file hashing (separate from registration),9.681600022304337e-05
+5,Evidence registration,0.00020108299986532074
+5,Analysis action logging,2.191299972764682e-05
+5,Analysis action logging,1.4070999895920977e-05
+5,Legal mapping,9.963000002244371e-05
+5,Final snapshot submission,0.00013412199996309937
+5,Proof-of-work mining (separate),0.053488044000005175
+5,History report generation (8+ actions),0.0007092599998941296
+5,Demonstration certificate generation,0.0004049809999742138
+5,JSON report generation,0.0009073289998013934
+5,History report generation (8+ actions),0.0007082479996824986
+5,Demonstration certificate generation,0.0002974889998768049
+5,JSON report generation,0.00043315299990354106
+5,History report generation (<8 actions),0.00027142900034959894
+5,Demonstration certificate generation,0.00023631699968973408
+5,JSON report generation,0.0004017859996565676
+6,ZIP file hashing (separate from registration),4.125199984628125e-05
+6,Evidence registration,0.00012075199992978014
+6,Proof-of-work mining (separate),0.0005910820000281092
+6,Custody transfer logging,2.603900020403671e-05
+6,Lab request issuance,5.865899993295898e-05
+6,Finding response logging,8.633999959783978e-05
+6,Finding response logging,3.2468999961565714e-05
+6,Legal mapping,6.679100033579743e-05
+6,Final snapshot submission,0.00013764800041826675
+6,Proof-of-work mining (separate),0.00021709700013161637
+6,ZIP file hashing (separate from registration),4.5107999994797865e-05
+6,Evidence registration,7.410200032609282e-05
+6,Custody transfer logging,1.4340999769046903e-05
+6,Custody transfer logging,1.040600000123959e-05
+6,Analysis action logging,1.1938000170630403e-05
+6,Custody transfer logging,9.714000043459237e-06
+6,Analysis action logging,9.204000434692716e-06
+6,Legal mapping,1.1857999652420403e-05
+6,Final snapshot submission,0.00010011099993789685
+6,Proof-of-work mining (separate),0.07971247699970263
+6,ZIP file hashing (separate from registration),9.958000009646639e-05
+6,Evidence registration,0.00020281599972804543
+6,Analysis action logging,2.445700010866858e-05
+6,Analysis action logging,1.38810000862577e-05
+6,Legal mapping,1.5683000128774438e-05
+6,Final snapshot submission,0.00013137899986759294
+6,Proof-of-work mining (separate),0.04103618299996015
+6,History report generation (8+ actions),0.0006120839998402516
+6,Demonstration certificate generation,0.00041148099990095943
+6,JSON report generation,0.0006202059998940967
+6,History report generation (8+ actions),0.00040708400001676637
+6,Demonstration certificate generation,0.0005711019998670963
+6,JSON report generation,0.0005957390003459295
+6,History report generation (<8 actions),0.0002921510003943695
+6,Demonstration certificate generation,0.0003323610003462818
+6,JSON report generation,0.0003374190000613453
+7,ZIP file hashing (separate from registration),3.424199985602172e-05
+7,Evidence registration,0.00011249999988649506
+7,Proof-of-work mining (separate),0.016112618000079237
+7,Custody transfer logging,5.082699999547913e-05
+7,Lab request issuance,7.393099986074958e-05
+7,Finding response logging,3.8207999750738963e-05
+7,Finding response logging,2.555799983383622e-05
+7,Legal mapping,1.6864999906829325e-05
+7,Final snapshot submission,0.00017419300002075033
+7,Proof-of-work mining (separate),0.04109588800019992
+7,ZIP file hashing (separate from registration),9.531299974696594e-05
+7,Evidence registration,0.00020165399973848253
+7,Custody transfer logging,2.2524000087287277e-05
+7,Custody transfer logging,1.3549999948736513e-05
+7,Analysis action logging,1.7225999727088492e-05
+7,Custody transfer logging,2.228399989689933e-05
+7,Analysis action logging,7.590499990328681e-05
+7,Legal mapping,2.1552999896812253e-05
+7,Final snapshot submission,0.000215104999824689
+7,Proof-of-work mining (separate),0.005318974000147136
+7,ZIP file hashing (separate from registration),7.647600023119594e-05
+7,Evidence registration,0.00013459300043905387
+7,Analysis action logging,1.9860000065818895e-05
+7,Analysis action logging,1.2098999832232948e-05
+7,Legal mapping,1.3671000033355085e-05
+7,Final snapshot submission,9.155799989457591e-05
+7,Proof-of-work mining (separate),0.01894498100000419
+7,History report generation (8+ actions),0.0007283679997271975
+7,Demonstration certificate generation,0.00028693300009763334
+7,JSON report generation,0.0006402059998436016
+7,History report generation (8+ actions),0.00034506100018916186
+7,Demonstration certificate generation,0.00031981299980543554
+7,JSON report generation,0.0003921909997188777
+7,History report generation (<8 actions),0.0004608949998328171
+7,Demonstration certificate generation,0.0002820360000441724
+7,JSON report generation,0.00031602700028088293
+8,ZIP file hashing (separate from registration),3.316999982416746e-05
+8,Evidence registration,0.00011928000003535999
+8,Proof-of-work mining (separate),0.07960623600001782
+8,Custody transfer logging,5.89289998060849e-05
+8,Lab request issuance,7.926999978735694e-05
+8,Finding response logging,3.765599967664457e-05
+8,Finding response logging,2.7551000130188186e-05
+8,Legal mapping,1.8608000118547352e-05
+8,Final snapshot submission,0.00045705899992753984
+8,Proof-of-work mining (separate),0.0035992300004181743
+8,ZIP file hashing (separate from registration),8.6530999851675e-05
+8,Evidence registration,0.00014806400031375233
+8,Custody transfer logging,2.0641000446630642e-05
+8,Custody transfer logging,1.2940000033268007e-05
+8,Analysis action logging,1.5733999589429004e-05
+8,Custody transfer logging,1.2028000128339045e-05
+8,Analysis action logging,1.1577000350371236e-05
+8,Legal mapping,1.4411999927688157e-05
+8,Final snapshot submission,0.00011634500015134108
+8,Proof-of-work mining (separate),0.09755239200012511
+8,ZIP file hashing (separate from registration),0.00011401199981264654
+8,Evidence registration,0.00021771800038550282
+8,Analysis action logging,2.493800002412172e-05
+8,Analysis action logging,1.4001000181451673e-05
+8,Legal mapping,0.0002201369998147129
+8,Final snapshot submission,0.00029543600021497696
+8,Proof-of-work mining (separate),0.03983274700021866
+8,History report generation (8+ actions),0.0005490179996741062
+8,Demonstration certificate generation,0.0002795010000227194
+8,JSON report generation,0.0006238310002117942
+8,History report generation (8+ actions),0.0003366780001670122
+8,Demonstration certificate generation,0.0003208640000593732
+8,JSON report generation,0.0004783819999829575
+8,History report generation (<8 actions),0.00026458899992576335
+8,Demonstration certificate generation,0.00025350200030516135
+8,JSON report generation,0.0003123110000160523
+9,ZIP file hashing (separate from registration),3.9879999803815736e-05
+9,Evidence registration,0.00012098300021534669
+9,Proof-of-work mining (separate),0.07565522599998076
+9,Custody transfer logging,6.394599995473982e-05
+9,Lab request issuance,9.301099998992868e-05
+9,Finding response logging,4.189299988865969e-05
+9,Finding response logging,2.867299963327241e-05
+9,Legal mapping,1.7176000255858526e-05
+9,Final snapshot submission,0.0001994409999497293
+9,Proof-of-work mining (separate),0.03982309900038672
+9,ZIP file hashing (separate from registration),9.958999999071239e-05
+9,Evidence registration,0.00019439299967416446
+9,Custody transfer logging,2.3165000129665714e-05
+9,Custody transfer logging,1.319900002272334e-05
+9,Analysis action logging,1.732600003379048e-05
+9,Custody transfer logging,1.1176000043633394e-05
+9,Analysis action logging,1.0556000233918894e-05
+9,Legal mapping,1.535299998067785e-05
+9,Final snapshot submission,0.00011730699998224736
+9,Proof-of-work mining (separate),0.04160925299993323
+9,ZIP file hashing (separate from registration),0.00010144299994863104
+9,Evidence registration,0.00019771799998125061
+9,Analysis action logging,2.332600024601561e-05
+9,Analysis action logging,1.342999985354254e-05
+9,Legal mapping,1.5222999991237884e-05
+9,Final snapshot submission,0.00016134299994519097
+9,Proof-of-work mining (separate),0.003536655000061728
+9,History report generation (8+ actions),0.0004173390002506494
+9,Demonstration certificate generation,0.00028007199989588116
+9,JSON report generation,0.0006331449999379402
+9,History report generation (8+ actions),0.00044581200018001255
+9,Demonstration certificate generation,0.0002917000001616543
+9,JSON report generation,0.00038664299972879235
+9,History report generation (<8 actions),0.00026343699983044644
+9,Demonstration certificate generation,0.00025109899979725014
+9,JSON report generation,0.00030977699998402386
+10,ZIP file hashing (separate from registration),3.100699996139156e-05
+10,Evidence registration,0.00011284099991826224
+10,Proof-of-work mining (separate),0.040025534000051266
+10,Custody transfer logging,9.771799977897899e-05
+10,Lab request issuance,7.969999978740816e-05
+10,Finding response logging,4.407699998409953e-05
+10,Finding response logging,2.9243999961181544e-05
+10,Legal mapping,1.8367999928159406e-05
+10,Final snapshot submission,0.00021895100007895962
+10,Proof-of-work mining (separate),0.01763549499992223
+10,ZIP file hashing (separate from registration),8.743099988350878e-05
+10,Evidence registration,0.00018690200022319914
+10,Custody transfer logging,2.1672000002581626e-05
+10,Custody transfer logging,1.3129999842931284e-05
+10,Analysis action logging,1.7066000054910546e-05
+10,Custody transfer logging,1.2007999885099707e-05
+10,Analysis action logging,1.2930000139022013e-05
+10,Legal mapping,1.5543999779765727e-05
+10,Final snapshot submission,0.00013993100037623663
+10,Proof-of-work mining (separate),0.007250559000112844
+10,ZIP file hashing (separate from registration),6.718100030411733e-05
+10,Evidence registration,0.00013403200000539073
+10,Analysis action logging,1.857799998106202e-05
+10,Analysis action logging,1.2028000128339045e-05
+10,Legal mapping,1.498200026617269e-05
+10,Final snapshot submission,9.329100021204795e-05
+10,Proof-of-work mining (separate),0.003747233000012784
+10,History report generation (8+ actions),0.00044724500003212597
+10,Demonstration certificate generation,0.0002766480001810123
+10,JSON report generation,0.0005172500000298896
+10,History report generation (8+ actions),0.0004475149999052519
+10,Demonstration certificate generation,0.0002954650003630377
+10,JSON report generation,0.0004013349998785998
+10,History report generation (<8 actions),0.00025889099970299867
+10,Demonstration certificate generation,0.00023079799984770943
+10,JSON report generation,0.00032644199973219656
+11,ZIP file hashing (separate from registration),3.030599964404246e-05
+11,Evidence registration,0.00010494899970581173
+11,Proof-of-work mining (separate),0.030231829000058497
+11,Custody transfer logging,4.83930002701527e-05
+11,Lab request issuance,7.163899999795831e-05
+11,Finding response logging,4.122200016354327e-05
+11,Finding response logging,2.8181999823573278e-05
+11,Legal mapping,1.6274000245175557e-05
+11,Final snapshot submission,0.0001703870002529584
+11,Proof-of-work mining (separate),0.0166071040002862
+11,ZIP file hashing (separate from registration),8.737200005271006e-05
+11,Evidence registration,0.00013914999999542488
+11,Custody transfer logging,1.848800002335338e-05
+11,Custody transfer logging,1.263900003323215e-05
+11,Analysis action logging,1.4792000001762062e-05
+11,Custody transfer logging,1.0985999779222766e-05
+11,Analysis action logging,1.1396999980206601e-05
+11,Legal mapping,1.4792999991186662e-05
+11,Final snapshot submission,0.00011231000007683178
+11,Proof-of-work mining (separate),0.04713914500007377
+11,ZIP file hashing (separate from registration),9.387199997945572e-05
+11,Evidence registration,0.00019011699987458996
+11,Analysis action logging,2.250399984404794e-05
+11,Analysis action logging,1.2277999758225633e-05
+11,Legal mapping,1.5514000097027747e-05
+11,Final snapshot submission,0.0001237669998772617
+11,Proof-of-work mining (separate),0.17115708299979815
+11,History report generation (8+ actions),0.0004894480002803903
+11,Demonstration certificate generation,0.00027905100023417617
+11,JSON report generation,0.0005326140003489854
+11,History report generation (8+ actions),0.000450018999799795
+11,Demonstration certificate generation,0.00038606199996138457
+11,JSON report generation,0.0003933529997084406
+11,History report generation (<8 actions),0.00026263600011589006
+11,Demonstration certificate generation,0.000231929999699787
+11,JSON report generation,0.0003396229999452771
+12,ZIP file hashing (separate from registration),3.70660000044154e-05
+12,Evidence registration,0.00010304600027666311
+12,Proof-of-work mining (separate),0.08944806399995286
+12,Custody transfer logging,0.00012883399995189393
+12,Lab request issuance,8.661099991513765e-05
+12,Finding response logging,4.011999999420368e-05
+12,Finding response logging,2.8072999612049898e-05
+12,Legal mapping,1.786600023478968e-05
+12,Final snapshot submission,0.00019964100010838592
+12,Proof-of-work mining (separate),0.004621632999715075
+12,ZIP file hashing (separate from registration),8.868400027495227e-05
+12,Evidence registration,0.00011748699989766465
+12,Custody transfer logging,1.938900004461175e-05
+12,Custody transfer logging,1.2478999906306854e-05
+12,Analysis action logging,1.4200999885360943e-05
+12,Custody transfer logging,1.701499968476128e-05
+12,Analysis action logging,7.673600021007587e-05
+12,Legal mapping,2.126199979102239e-05
+12,Final snapshot submission,0.00012141399975007516
+12,Proof-of-work mining (separate),0.011839170999792259
+12,ZIP file hashing (separate from registration),7.556399987151963e-05
+12,Evidence registration,0.0001411319999533589
+12,Analysis action logging,2.0280999706301372e-05
+12,Analysis action logging,1.277899991691811e-05
+12,Legal mapping,1.515300027676858e-05
+12,Final snapshot submission,9.05669999156089e-05
+12,Proof-of-work mining (separate),0.06636309699979392
+12,History report generation (8+ actions),0.0006870759998491849
+12,Demonstration certificate generation,0.00027990199987470987
+12,JSON report generation,0.0005163689997971233
+12,History report generation (8+ actions),0.000328955999975733
+12,Demonstration certificate generation,0.00027316199975757627
+12,JSON report generation,0.000492814000153885
+12,History report generation (<8 actions),0.0005454319998534629
+12,Demonstration certificate generation,0.0002861819998543069
+12,JSON report generation,0.00032028400028139004
+13,ZIP file hashing (separate from registration),3.3571000130905304e-05
+13,Evidence registration,0.00011924000000362867
+13,Proof-of-work mining (separate),0.00010139300002265372
+13,Custody transfer logging,1.919899978020112e-05
+13,Lab request issuance,5.147799993210356e-05
+13,Finding response logging,3.126699994027149e-05
+13,Finding response logging,2.49669997174351e-05
+13,Legal mapping,1.3680999927601079e-05
+13,Final snapshot submission,0.00011773699998229858
+13,Proof-of-work mining (separate),0.00916493700015053
+13,ZIP file hashing (separate from registration),7.447200005117338e-05
+13,Evidence registration,0.00013058700005785795
+13,Custody transfer logging,1.9660000361909624e-05
+13,Custody transfer logging,1.2789000265911454e-05
+13,Analysis action logging,1.4031999853614252e-05
+13,Custody transfer logging,1.085700023395475e-05
+13,Analysis action logging,1.0725999800342834e-05
+13,Legal mapping,1.377099988530972e-05
+13,Final snapshot submission,0.00011373200004527462
+13,Proof-of-work mining (separate),0.04530273499995019
+13,ZIP file hashing (separate from registration),9.200899967254372e-05
+13,Evidence registration,0.00024972699975478463
+13,Analysis action logging,2.8602999918803107e-05
+13,Analysis action logging,1.4782000107516069e-05
+13,Legal mapping,1.65950000337034e-05
+13,Final snapshot submission,0.00010528900020290166
+13,Proof-of-work mining (separate),0.0253443349997724
+13,History report generation (8+ actions),0.00043582699981925543
+13,Demonstration certificate generation,0.00032144500028152834
+13,JSON report generation,0.0006545579999510664
+13,History report generation (8+ actions),0.00040940799999589217
+13,Demonstration certificate generation,0.0002794419997371733
+13,JSON report generation,0.0005624589998660667
+13,History report generation (<8 actions),0.0003220850003344822
+13,Demonstration certificate generation,0.00023258099963641143
+13,JSON report generation,0.0003135130000373465
+14,ZIP file hashing (separate from registration),3.5012000353162875e-05
+14,Evidence registration,0.00011845900007756427
+14,Proof-of-work mining (separate),0.01659231199982969
+14,Custody transfer logging,3.870799992000684e-05
+14,Lab request issuance,6.647000009252224e-05
+14,Finding response logging,3.924900011043064e-05
+14,Finding response logging,2.6980999791703653e-05
+14,Legal mapping,1.4862000170978718e-05
+14,Final snapshot submission,0.00015125800018722657
+14,Proof-of-work mining (separate),0.0005969999997432751
+14,ZIP file hashing (separate from registration),5.6646000302862376e-05
+14,Evidence registration,8.229400009440724e-05
+14,Custody transfer logging,1.5202999747998547e-05
+14,Custody transfer logging,1.071699989552144e-05
+14,Analysis action logging,1.2629000138986157e-05
+14,Custody transfer logging,1.0386000212747604e-05
+14,Analysis action logging,1.0665999980119523e-05
+14,Legal mapping,1.2037999567837687e-05
+14,Final snapshot submission,0.00010707199999160366
+14,Proof-of-work mining (separate),0.11521808199995576
+14,ZIP file hashing (separate from registration),9.299999965151073e-05
+14,Evidence registration,0.00020219500038365368
+14,Analysis action logging,2.2904000161361182e-05
+14,Analysis action logging,1.3639999906445155e-05
+14,Legal mapping,1.5253000128723215e-05
+14,Final snapshot submission,0.0001330009999946924
+14,Proof-of-work mining (separate),0.031547664000299847
+14,History report generation (8+ actions),0.0006183629998304241
+14,Demonstration certificate generation,0.00029349200030992506
+14,JSON report generation,0.0005575209997914499
+14,History report generation (8+ actions),0.0004832390000046871
+14,Demonstration certificate generation,0.0002692460002435837
+14,JSON report generation,0.00041401399994356325
+14,History report generation (<8 actions),0.000261775000126363
+14,Demonstration certificate generation,0.00022771400017518317
+14,JSON report generation,0.0003495280002425716
+15,ZIP file hashing (separate from registration),3.9930000184540404e-05
+15,Evidence registration,0.00012812299974029884
+15,Proof-of-work mining (separate),0.02338656199981415
+15,Custody transfer logging,5.4832000387250446e-05
+15,Lab request issuance,7.533400003012503e-05
+15,Finding response logging,4.0922000152932014e-05
+15,Finding response logging,2.821199996105861e-05
+15,Legal mapping,1.8057000033877557e-05
+15,Final snapshot submission,0.00018202499995823018
+15,Proof-of-work mining (separate),0.013826418999997259
+15,ZIP file hashing (separate from registration),8.575900028517935e-05
+15,Evidence registration,0.0001494949997322692
+15,Custody transfer logging,2.0600999960151967e-05
+15,Custody transfer logging,1.3300000318849925e-05
+15,Analysis action logging,1.6384999980800785e-05
+15,Custody transfer logging,1.1827999969682423e-05
+15,Analysis action logging,1.1367000297468621e-05
+15,Legal mapping,1.4652000118076103e-05
+15,Final snapshot submission,0.00011523399962243275
+15,Proof-of-work mining (separate),0.013858858000276086
+15,ZIP file hashing (separate from registration),7.300000015675323e-05
+15,Evidence registration,0.00014639100027125096
+15,Analysis action logging,1.9469000108074397e-05
+15,Analysis action logging,1.1388000075385207e-05
+15,Legal mapping,1.4321999969979515e-05
+15,Final snapshot submission,0.00012629100001504412
+15,Proof-of-work mining (separate),0.04810891800025274
+15,History report generation (8+ actions),0.0004377399995973974
+15,Demonstration certificate generation,0.0004252210001141066
+15,JSON report generation,0.0007002960001045722
+15,History report generation (8+ actions),0.0006851240000287362
+15,Demonstration certificate generation,0.0002725809999901685
+15,JSON report generation,0.0005997549997118767
+15,History report generation (<8 actions),0.0002893569999287138
+15,Demonstration certificate generation,0.00029738900002485025
+15,JSON report generation,0.00035226199997850927
+16,ZIP file hashing (separate from registration),3.323999999338412e-05
+16,Evidence registration,0.00013755800000581075
+16,Proof-of-work mining (separate),0.020162087000244355
+16,Custody transfer logging,4.2084000142494915e-05
+16,Lab request issuance,6.83130001561949e-05
+16,Finding response logging,4.051099995194818e-05
+16,Finding response logging,2.7461999707156792e-05
+16,Legal mapping,1.5373000223917188e-05
+16,Final snapshot submission,0.00016389700022045872
+16,Proof-of-work mining (separate),0.009495525000147609
+16,ZIP file hashing (separate from registration),7.725600016783574e-05
+16,Evidence registration,0.00013425299994196394
+16,Custody transfer logging,2.0310999843786703e-05
+16,Custody transfer logging,1.260900035049417e-05
+16,Analysis action logging,1.5843999790376984e-05
+16,Custody transfer logging,1.0977000329148723e-05
+16,Analysis action logging,1.1586999789869878e-05
+16,Legal mapping,1.4902000202710042e-05
+16,Final snapshot submission,0.00011472400001366623
+16,Proof-of-work mining (separate),0.006690263000109553
+16,ZIP file hashing (separate from registration),5.300000020724838e-05
+16,Evidence registration,0.0001065400001607486
+16,Analysis action logging,1.642400002310751e-05
+16,Analysis action logging,1.2408999737090198e-05
+16,Legal mapping,1.484299991716398e-05
+16,Final snapshot submission,8.66200002747064e-05
+16,Proof-of-work mining (separate),0.08232841300014115
+16,History report generation (8+ actions),0.0005842310001753503
+16,Demonstration certificate generation,0.0002899069995692116
+16,JSON report generation,0.000695118999828992
+16,History report generation (8+ actions),0.00034362800033704843
+16,Demonstration certificate generation,0.00027404299999034265
+16,JSON report generation,0.00044267799967201427
+16,History report generation (<8 actions),0.0002700969998841174
+16,Demonstration certificate generation,0.00023578599984830362
+16,JSON report generation,0.0004181409999546304
+17,ZIP file hashing (separate from registration),3.385099989827722e-05
+17,Evidence registration,0.00012007099985567038
+17,Proof-of-work mining (separate),0.04442406999987725
+17,Custody transfer logging,5.9949999922537245e-05
+17,Lab request issuance,7.610500006194343e-05
+17,Finding response logging,4.515899991019978e-05
+17,Finding response logging,2.8181999823573278e-05
+17,Legal mapping,1.81469999915862e-05
+17,Final snapshot submission,0.0001973369999177521
+17,Proof-of-work mining (separate),0.07413564399985262
+17,ZIP file hashing (separate from registration),0.00010090200021295459
+17,Evidence registration,0.00023321199978454388
+17,Custody transfer logging,2.9053000162093667e-05
+17,Custody transfer logging,1.3450000096781878e-05
+17,Analysis action logging,1.83779998224054e-05
+17,Custody transfer logging,1.2669000170717482e-05
+17,Analysis action logging,1.1377999726391863e-05
+17,Legal mapping,1.7337000372208422e-05
+17,Final snapshot submission,0.00012192399981358903
+17,Proof-of-work mining (separate),0.05046702700019523
+17,ZIP file hashing (separate from registration),9.774699992703972e-05
+17,Evidence registration,0.0009358209999845712
+17,Analysis action logging,5.966000026091933e-05
+17,Analysis action logging,1.9209000129194465e-05
+17,Legal mapping,1.9148999854223803e-05
+17,Final snapshot submission,0.0001719300003060198
+17,Proof-of-work mining (separate),0.047797627999898396
+17,History report generation (8+ actions),0.0007485999999516935
+17,Demonstration certificate generation,0.00028135499997006264
+17,JSON report generation,0.0008000870002433658
+17,History report generation (8+ actions),0.00035610699978860794
+17,Demonstration certificate generation,0.0003342339996379451
+17,JSON report generation,0.0004006139997727587
+17,History report generation (<8 actions),0.0002911090000452532
+17,Demonstration certificate generation,0.000248724999892147
+17,JSON report generation,0.0003116299999419425
+18,ZIP file hashing (separate from registration),3.972000013163779e-05
+18,Evidence registration,0.00012418699998306693
+18,Proof-of-work mining (separate),0.07144001599999683
+18,Custody transfer logging,7.720599978711107e-05
+18,Lab request issuance,7.937000009405892e-05
+18,Finding response logging,4.268500015314203e-05
+18,Finding response logging,2.9353999707382172e-05
+18,Legal mapping,1.8307999653188745e-05
+18,Final snapshot submission,0.00020025200001327903
+18,Proof-of-work mining (separate),0.003896268000062264
+18,ZIP file hashing (separate from registration),8.889400032785488e-05
+18,Evidence registration,0.00012118299991925596
+18,Custody transfer logging,1.7946999832929578e-05
+18,Custody transfer logging,1.181799962068908e-05
+18,Analysis action logging,1.3819999821862439e-05
+18,Custody transfer logging,1.0936999842670048e-05
+18,Analysis action logging,1.037599986375426e-05
+18,Legal mapping,1.4210999779606936e-05
+18,Final snapshot submission,0.00011475299970697961
+18,Proof-of-work mining (separate),0.006697944999814354
+18,ZIP file hashing (separate from registration),6.253500032471493e-05
+18,Evidence registration,0.00011480300008770428
+18,Analysis action logging,1.828700033001951e-05
+18,Analysis action logging,1.153799985331716e-05
+18,Legal mapping,1.371100006508641e-05
+18,Final snapshot submission,8.566900032747071e-05
+18,Proof-of-work mining (separate),0.00660483399997247
+18,History report generation (8+ actions),0.0004128329997001856
+18,Demonstration certificate generation,0.0003217059997950855
+18,JSON report generation,0.0005923029998484708
+18,History report generation (8+ actions),0.00035150999974575825
+18,Demonstration certificate generation,0.00031209100006890367
+18,JSON report generation,0.00048137600015252247
+18,History report generation (<8 actions),0.00026453899999978603
+18,Demonstration certificate generation,0.0002531209997869155
+18,JSON report generation,0.0003121810000266123
+19,ZIP file hashing (separate from registration),5.371099996409612e-05
+19,Evidence registration,0.0003851609999401262
+19,Proof-of-work mining (separate),0.020786690000022645
+19,Custody transfer logging,4.0870999782782746e-05
+19,Lab request issuance,6.761200029359316e-05
+19,Finding response logging,3.964000006817514e-05
+19,Finding response logging,2.7831999886984704e-05
+19,Legal mapping,1.586400003361632e-05
+19,Final snapshot submission,0.00015734800035716034
+19,Proof-of-work mining (separate),0.006807811000271613
+19,ZIP file hashing (separate from registration),7.077700001900666e-05
+19,Evidence registration,0.00012154400019426248
+19,Custody transfer logging,1.9550000160961645e-05
+19,Custody transfer logging,1.20179997793457e-05
+19,Analysis action logging,1.4721999832545407e-05
+19,Custody transfer logging,1.0877000022446737e-05
+19,Analysis action logging,1.0225000096397707e-05
+19,Legal mapping,1.3010000202484662e-05
+19,Final snapshot submission,0.00010605999977997271
+19,Proof-of-work mining (separate),0.03980808500000421
+19,ZIP file hashing (separate from registration),8.411700036958791e-05
+19,Evidence registration,0.0002585999995972088
+19,Analysis action logging,2.6510000225243857e-05
+19,Analysis action logging,1.3529999705497175e-05
+19,Legal mapping,9.755700011737645e-05
+19,Final snapshot submission,0.00011537399996086606
+19,Proof-of-work mining (separate),0.020442310999897018
+19,History report generation (8+ actions),0.0005956790000709589
+19,Demonstration certificate generation,0.00034175500013589044
+19,JSON report generation,0.0005154880000191042
+19,History report generation (8+ actions),0.0006655239999417972
+19,Demonstration certificate generation,0.000279502000012144
+19,JSON report generation,0.00045927299970571767
+19,History report generation (<8 actions),0.0002697970003282535
+19,Demonstration certificate generation,0.0002359059999434976
+19,JSON report generation,0.00046833599981255247
+20,ZIP file hashing (separate from registration),8.008099985090666e-05
+20,Evidence registration,0.0001269620001949079
+20,Proof-of-work mining (separate),0.08927612500019677
+20,Custody transfer logging,6.362599970088922e-05
+20,Lab request issuance,8.372600041184342e-05
+20,Finding response logging,0.00010938500008705887
+20,Finding response logging,4.0381000417255564e-05
+20,Legal mapping,1.8138000086764805e-05
+20,Final snapshot submission,0.00023920000012367382
+20,Proof-of-work mining (separate),0.19048250800005917
+20,ZIP file hashing (separate from registration),0.00010838300022442127
+20,Evidence registration,0.00025574599976607715
+20,Custody transfer logging,2.606899988677469e-05
+20,Custody transfer logging,1.2999999853491317e-05
+20,Analysis action logging,1.781699984348961e-05
+20,Custody transfer logging,1.195799995912239e-05
+20,Analysis action logging,1.2149000212957617e-05
+20,Legal mapping,1.5854000139370328e-05
+20,Final snapshot submission,0.0001172469997072767
+20,Proof-of-work mining (separate),0.01734831200019471
+20,ZIP file hashing (separate from registration),9.092700020119082e-05
+20,Evidence registration,0.0001563360001455294
+20,Analysis action logging,2.160299982278957e-05
+20,Analysis action logging,1.2448999768821523e-05
+20,Legal mapping,1.3810999917041045e-05
+20,Final snapshot submission,0.00013907999982620822
+20,Proof-of-work mining (separate),0.0013996419997965859
+20,History report generation (8+ actions),0.00042307800003982265
+20,Demonstration certificate generation,0.00029535499970734236
+20,JSON report generation,0.0005195730000195908
+20,History report generation (8+ actions),0.0004867239999839512
+20,Demonstration certificate generation,0.00027597700000114855
+20,JSON report generation,0.0003917009998986032
+20,History report generation (<8 actions),0.0002874440001505718
+20,Demonstration certificate generation,0.00031884100008028327
+20,JSON report generation,0.0003195019999111537
