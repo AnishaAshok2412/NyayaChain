@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.DS_Store
+report_*.json
+demo_output/
+evidence/
+*.zip
